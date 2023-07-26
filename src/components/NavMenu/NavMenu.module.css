@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0 8px;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 78.5px;
+    margin-right: 127px;
+}
+
+.header__nav a {
+    font-size: 20px;
+}
+
+.header__hr {
+    height: 2px;
+    background: rgba(0, 28, 8, 0.7);
+}
