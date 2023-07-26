@@ -1,0 +1,24 @@
+.shop {
+    margin-top: 50px;
+}
+
+.shop__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.shop__info_title {
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+.shop__info_text {
+    font-size: 28px;
+    line-height: 140%;
+    max-width: 744px;
+}
+
+.shop__items {
+    margin-bottom: 150px;
+}

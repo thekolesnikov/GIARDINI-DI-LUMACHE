@@ -1,0 +1,12 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 186px 0 44px;
+}
+
+.title__text {
+    font-size: 118px;
+    font-weight: 300;
+    letter-spacing: 1.18px;
+}

@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import logo from './img/logo.svg';
 import styles from './NavMenu.module.css';
+import HorizontalLine from '../HorizontalLine/HorizontalLine';
 
 function NavMenu() {
     return (
@@ -17,7 +18,7 @@ function NavMenu() {
                     <NavLink>Contact us</NavLink>
                 </nav>
             </div>
-            <hr className={styles.header__hr} />
+            <HorizontalLine />
         </header>
     );
 }

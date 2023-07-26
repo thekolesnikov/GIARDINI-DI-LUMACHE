@@ -1,0 +1,26 @@
+.product {
+    margin-top: 50px;
+}
+
+.product__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.product__info_title {
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+.product__info_text {
+    font-size: 28px;
+    line-height: 140%;
+    max-width: 744px;
+}
+
+.product__images {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}

@@ -1,0 +1,39 @@
+.item {
+    max-width: 364px;
+}
+
+.item__img {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.item__name {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.item__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.item__price {
+    font-size: 24px;
+}
+
+.item__weight {
+    font-size: 24px;
+    color: #828282;
+}
+
+.item__button {
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #000000;
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 2px;
+}

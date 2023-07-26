@@ -15,8 +15,3 @@
 .header__nav a {
     font-size: 20px;
 }
-
-.header__hr {
-    height: 2px;
-    background: rgba(0, 28, 8, 0.7);
-}
