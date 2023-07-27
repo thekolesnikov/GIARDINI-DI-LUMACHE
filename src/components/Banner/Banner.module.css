@@ -1,0 +1,14 @@
+.banner {
+    margin: 169px 0 203px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner__title {
+    max-width: 1127px;
+    font-size: 86px;
+    line-height: 109.1px;
+    text-transform: uppercase;
+    text-indent: 383px;
+}

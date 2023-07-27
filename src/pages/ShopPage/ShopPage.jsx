@@ -1,5 +1,11 @@
+import Banner from '../../components/Banner/Banner';
+
 function ShopPage() {
-    return <div>ShopPage</div>;
+    return (
+        <div>
+            <Banner />
+        </div>
+    );
 }
 
 export default ShopPage;

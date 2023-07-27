@@ -5,7 +5,7 @@ import HorizontalLine from '../HorizontalLine/HorizontalLine';
 
 function NavMenu() {
     return (
-        <header className="container">
+        <header>
             <div className={styles.header}>
                 <Link to="/">
                     <img src={logo} alt="logo" />
