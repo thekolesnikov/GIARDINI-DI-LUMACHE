@@ -7,7 +7,7 @@ function ProductInfo() {
     return (
         <div className={styles.product}>
             <div className={styles.product__info}>
-                <div className={styles.product__info_title}>Product</div>
+                <h2 className={styles.product__info_title}>Product</h2>
                 <div className={styles.product__info_text}>
                     Indulge in the finest snails cultivated on our Italian snail
                     farm. We take pride in producing high-quality snails for

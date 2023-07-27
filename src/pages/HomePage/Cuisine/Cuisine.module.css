@@ -1,0 +1,19 @@
+.cuisine {
+    margin: 50px 0 150px;
+}
+
+.cuisine__info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cuisine__title {
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+.cuisine__text {
+    max-width: 744px;
+    font-size: 28px;
+    line-height: 140%;
+}

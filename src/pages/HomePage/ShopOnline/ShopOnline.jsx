@@ -6,7 +6,7 @@ function ShopOnline() {
     return (
         <div className={styles.shop}>
             <div className={styles.shop__info}>
-                <div className={styles.shop__info_title}>Shop online</div>
+                <h2 className={styles.shop__info_title}>Shop online</h2>
                 <div className={styles.shop__info_text}>
                     Experience the taste of Italian excellence from our online
                     shop. Indulge in our high-quality, eco-certified snails and
@@ -15,6 +15,9 @@ function ShopOnline() {
                 </div>
             </div>
             <div className={styles.shop__items}>
+                <ItemCard />
+                <ItemCard />
+                <ItemCard />
                 <ItemCard />
             </div>
             <HorizontalLine />

@@ -7,7 +7,7 @@ function NavMenu() {
     return (
         <header className="container">
             <div className={styles.header}>
-                <Link>
+                <Link to="/">
                     <img src={logo} alt="logo" />
                 </Link>
                 <nav className={styles.header__nav}>
