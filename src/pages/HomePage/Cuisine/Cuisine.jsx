@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import styles from './Cuisine.module.css';
 import HorizontalLine from '../../../components/HorizontalLine/HorizontalLine';
+import backgroungImg from './img/background.jpg';
 
 function Cuisine() {
     return (
@@ -18,6 +20,21 @@ function Cuisine() {
                         a tantalizing selection to satisfy every palate.{' '}
                     </div>
                 </div>
+                <div className={styles.cuisine__content}>
+                    <div className={styles.cuisine__img}>
+                        <img src={backgroungImg} alt="cuisine" />
+                    </div>
+                    <div className={styles.cuisine__textcontent}>
+                        Our commitment to sustainability extends to our
+                        ingredients, sourced locally and responsibly, ensuring
+                        the freshest and highest quality. Immerse yourself in
+                        the essence of Italian excellence as our skilled
+                        transform our eco-certified snails into culinary
+                        masterpieces, delivering a harmonious fusion of taste,
+                        texture, and tradition to your plate.
+                    </div>
+                </div>
+                <Link className={styles.cuisine__link}>LEARN MORE</Link>
             </div>
             <HorizontalLine />
         </>

@@ -14,4 +14,12 @@
 
 .header__nav a {
     font-size: 20px;
+    color: #000000;
+}
+
+.header__nav_btn {
+    cursor: pointer;
+    background-color: #fefced;
+    font-size: 20px;
+    font-family: 'Noto Serif', serif;
 }

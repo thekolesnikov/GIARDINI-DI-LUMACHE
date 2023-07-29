@@ -1,8 +1,15 @@
+import { useEffect, useState } from 'react';
 import styles from './ShopOnline.module.css';
 import ItemCard from '../../../components/ItemCard/ItemCard';
 import HorizontalLine from '../../../components/HorizontalLine/HorizontalLine';
+import { fetchItems } from '../../../utils/fetchItems';
 
 function ShopOnline() {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        fetchItems(setItems);
+    }, []);
     return (
         <div className={styles.shop}>
             <div className={styles.shop__info}>
@@ -15,10 +22,17 @@ function ShopOnline() {
                 </div>
             </div>
             <div className={styles.shop__items}>
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
+                {items.splice(0, 4).map((item) => {
+                    return (
+                        <ItemCard
+                            key={item.id}
+                            id={item.id}
+                            img={item.img}
+                            name={item.name}
+                            price={item.price}
+                        />
+                    );
+                })}
             </div>
             <HorizontalLine />
         </div>

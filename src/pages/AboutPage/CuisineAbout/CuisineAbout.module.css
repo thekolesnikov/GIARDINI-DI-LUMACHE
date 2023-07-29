@@ -1,0 +1,29 @@
+.cuisine {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 474px;
+}
+
+.cuisine__title {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.cuisine__images {
+    display: flex;
+    gap: 18px;
+}
+
+.cuisine__text {
+    text-indent: 382px;
+    max-width: 1254px;
+    position: absolute;
+    top: 410px;
+    left: 0;
+    font-size: 56px;
+    line-height: 140%;
+    mix-blend-mode: difference;
+    color: white;
+}

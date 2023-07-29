@@ -5,6 +5,7 @@
 .cuisine__info {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 100px;
 }
 
 .cuisine__title {
@@ -16,4 +17,32 @@
     max-width: 744px;
     font-size: 28px;
     line-height: 140%;
+}
+
+.cuisine__content {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.cuisine__img {
+    display: flex;
+    justify-content: end;
+}
+
+.cuisine__textcontent {
+    font-size: 56px;
+    line-height: 140%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    mix-blend-mode: difference;
+    color: white;
+}
+
+.cuisine__link {
+    display: block;
+    font-size: 28px;
+    line-height: 140%;
+    text-decoration-line: underline;
+    text-align: center;
 }

@@ -1,0 +1,23 @@
+.philosophy {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+.philosophy__title {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.philosophy__content {
+    max-width: 490px;
+    margin-right: 254px;
+}
+
+.philosophy__text {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 100px;
+}

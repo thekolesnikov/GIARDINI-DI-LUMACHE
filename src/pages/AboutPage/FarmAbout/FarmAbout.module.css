@@ -1,0 +1,48 @@
+.farm {
+    margin-bottom: 150px;
+}
+
+.farm__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.farm__info_title {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.farm__info_text {
+    max-width: 744px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.farm__info_text p {
+    font-size: 28px;
+    line-height: 140%;
+}
+
+.farm__content {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.farm__content_img {
+    display: block;
+}
+
+.farm__content_text {
+    position: absolute;
+    max-width: 1256px;
+    top: 488px;
+    left: 0;
+    font-size: 56px;
+    line-height: 140%;
+    mix-blend-mode: difference;
+    color: white;
+}
