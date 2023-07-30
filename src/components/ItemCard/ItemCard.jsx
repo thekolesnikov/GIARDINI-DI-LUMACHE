@@ -9,7 +9,7 @@ function ItemCard({ id, img, name, price }) {
             </Link>
             <div className={styles.item__name}>{name}</div>
             <div className={styles.item__info}>
-                <div className={styles.item__price}>{price}</div>
+                <div className={styles.item__price}>€{price}</div>
                 <div className={styles.item__weight}>1000g</div>
             </div>
             <button className={styles.item__button}>Add to Cart</button>
