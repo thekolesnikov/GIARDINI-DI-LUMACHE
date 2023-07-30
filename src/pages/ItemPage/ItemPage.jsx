@@ -34,8 +34,10 @@ function ItemPage() {
                 name: data[0].name,
                 count,
                 img: data[0].img,
+                price: data[0].price,
             })
         );
+        setCount(1);
     }
 
     return (

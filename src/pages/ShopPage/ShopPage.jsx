@@ -1,10 +1,55 @@
+import { useEffect, useState } from 'react';
+import styles from './ShopPage.module.css';
 import Banner from '../../components/Banner/Banner';
+import { fetchItems } from '../../utils/fetchItems';
+import ItemCard from '../../components/ItemCard/ItemCard';
 
 function ShopPage() {
+    const [items, setItems] = useState([]);
+    useEffect(() => {
+        fetchItems(setItems);
+    }, []);
+
     return (
-        <div>
+        <>
             <Banner />
-        </div>
+            <div className={styles.shop}>
+                <p className={styles.shop__title}>Fresh</p>
+                <div className={styles.shop__items}>
+                    {items.map((item) => {
+                        if (item.category === 'fresh') {
+                            return (
+                                <ItemCard
+                                    key={item.id}
+                                    id={item.id}
+                                    img={item.img}
+                                    name={item.name}
+                                    price={item.price}
+                                />
+                            );
+                        }
+                    })}
+                </div>
+            </div>
+            <div className={styles.shop}>
+                <p className={styles.shop__title}>Cooked</p>
+                <div className={styles.shop__items}>
+                    {items.map((item) => {
+                        if (item.category === 'cooked') {
+                            return (
+                                <ItemCard
+                                    key={item.id}
+                                    id={item.id}
+                                    img={item.img}
+                                    name={item.name}
+                                    price={item.price}
+                                />
+                            );
+                        }
+                    })}
+                </div>
+            </div>
+        </>
     );
 }
 

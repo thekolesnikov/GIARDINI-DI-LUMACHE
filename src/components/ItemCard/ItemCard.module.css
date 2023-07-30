@@ -7,8 +7,12 @@
     margin-bottom: 15px;
 }
 
+.item__img img {
+    width: 363px;
+}
+
 .item__name {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
@@ -36,4 +40,11 @@
     width: 100%;
     padding: 15px 10px;
     border-radius: 2px;
+    border: 1px solid #000000;
+    transition: all 0.3s ease;
+}
+
+.item__button:hover {
+    color: #000000;
+    background-color: #ffffff;
 }

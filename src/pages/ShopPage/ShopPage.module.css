@@ -1,0 +1,23 @@
+.shop {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 210px;
+}
+
+.shop:last-child {
+    border-bottom: 2px solid #000000;
+}
+
+.shop__title {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.shop__items {
+    max-width: 1127px;
+    display: flex;
+    column-gap: 18px;
+    row-gap: 30px;
+    flex-wrap: wrap;
+}

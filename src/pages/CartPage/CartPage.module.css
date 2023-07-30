@@ -3,7 +3,7 @@
     z-index: 100;
     background: rgba(0, 0, 0, 0.5);
     top: 0;
-    right: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
     transition: all 0.2s ease;
@@ -20,9 +20,9 @@
     overflow: hidden;
 }
 
-.active {
+/* .active {
     left: 0;
-}
+} */
 
 .cart__title {
     font-size: 40px;
@@ -46,7 +46,7 @@
 
 .cart__item_body {
     display: flex;
-    gap: 20px;
+    gap: 24px;
 }
 
 .cart__item_info {
@@ -65,6 +65,7 @@
     height: 28px;
     border: 1px solid #282828;
     display: flex;
+    align-items: center;
     gap: 8px;
 }
 
@@ -77,6 +78,13 @@
     font-size: 16px;
     line-height: 19px;
     text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.cart__item_weight {
+    font-size: 12px;
+    text-transform: lowercase;
+    color: Gray;
 }
 
 .cart__item_info_side {
@@ -90,7 +98,9 @@
     cursor: pointer;
     position: relative;
     top: -3.5px;
-    background-color: #ffffff;
+    background-color: #fefced;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .cart__item_exit img {
@@ -112,7 +122,7 @@
 
 .cart__minus,
 .cart__plus {
-    background-color: #ffffff;
+    background-color: #fefced;
     margin: auto 0;
     padding: 0 5px;
 }
@@ -175,24 +185,24 @@
     display: block;
     width: 50%;
     cursor: pointer;
-    background: #282828;
-    border: 1px solid #282828;
-    border-radius: 80px;
+    background: #333333;
+    border: 1px solid #333333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 .cart__button_pay a {
     display: block;
     height: 100%;
-    padding: 16px 0;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 30px;
-    letter-spacing: 0.06em;
+    padding: 15px 0;
     color: #ffffff;
+    font-size: 24px;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
 }
 
 .cart__button_pay:hover a {
-    color: #282828;
+    color: #000000;
 }
 
 .cart__button_pay:hover {
@@ -202,22 +212,20 @@
 .cart__button_continue {
     display: block;
     cursor: pointer;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 30px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #282828;
+    font-size: 24px;
+    text-transform: capitalize;
+    color: #000000;
     background: #ffffff;
     padding: 15px 0;
     width: 50%;
-    border: 1px solid #282828;
-    border-radius: 80px;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 .cart__button_continue:hover {
     color: #ffffff;
-    background: #282828;
+    background: #000000;
 }
 
 .cart__empty {

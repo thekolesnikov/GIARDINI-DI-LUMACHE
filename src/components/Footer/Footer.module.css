@@ -1,5 +1,5 @@
 .footer {
-    margin: 50px 0 100px;
+    padding: 50px 0 100px;
     display: flex;
     justify-content: space-between;
 }
@@ -11,7 +11,7 @@
 }
 
 .footer__title {
-    font-size: 48px;
+    font-size: 40px;
     text-transform: uppercase;
 }
 
@@ -22,7 +22,7 @@
 
 .footer__text {
     background-color: #fefced;
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
     cursor: pointer;
 }
@@ -41,20 +41,20 @@
 }
 
 .footer__contacts_title {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
     line-height: 140%;
     margin-bottom: 20px;
 }
 
 .footer__contacts_text {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 140%;
 }
 
 .footer__contacts_link {
     display: block;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 140%;
     text-decoration-line: underline;
 }

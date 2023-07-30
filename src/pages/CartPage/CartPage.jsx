@@ -1,35 +1,58 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import cn from 'classnames';
+import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './CartPage.module.css';
 import close from './img/Close.svg';
+import minus from './img/minus.svg';
+import plus from './img/plus.svg';
+import {
+    deleteFromCart,
+    incrementCount,
+    decrementCount,
+} from '../../redux/slices/itemsSlice';
 
-function CartPage() {
+function CartPage({ setCartActive }) {
     const items = useSelector((state) => state.items);
-    const cartActive = useSelector((state) => state.cartActive);
+    const dispatch = useDispatch();
+
+    function deleteItem(id) {
+        dispatch(deleteFromCart(id));
+    }
+
+    function increment(id, count) {
+        dispatch(incrementCount({ id, count }));
+    }
+
+    function decrement(id, count) {
+        dispatch(decrementCount({ id, count }));
+    }
+
+    function caclTotal() {
+        const total = items.reduce(
+            (acc, current) => acc + current.count * current.price,
+            0
+        );
+        return total.toFixed(2);
+    }
 
     return (
         <div
             onClick={() => {
                 document.body.classList.remove('hidden');
+                setCartActive(false);
             }}
-            className={cn(
-                styles.cart__background,
-                cartActive ? styles.active : ''
-            )}
+            className={styles.cart__background}
         >
             <div onClick={(e) => e.stopPropagation()} className={styles.cart}>
                 <div className={styles.cart__title}>Your Cart</div>
                 <div className={styles.cart__items}>
-                    {/* {cart.cartArr.length === 0 && (
+                    {items.length === 0 && (
                         <div className={styles.cart__empty}>
                             Ohhh
                             <br />
                             Your cart is empty!!!
                         </div>
-                    )} */}
+                    )}
                     {items?.map((item) => {
                         return (
                             <div key={item.id} className={styles.cart__item}>
@@ -43,12 +66,21 @@ function CartPage() {
                                                 styles.cart__item_info_side
                                             }
                                         >
-                                            <div
-                                                className={
-                                                    styles.cart__item_name
-                                                }
-                                            >
-                                                {item.name}
+                                            <div>
+                                                <div
+                                                    className={
+                                                        styles.cart__item_name
+                                                    }
+                                                >
+                                                    {item.name}
+                                                </div>
+                                                <div
+                                                    className={
+                                                        styles.cart__item_weight
+                                                    }
+                                                >
+                                                    1000G
+                                                </div>
                                             </div>
                                             <div
                                                 className={
@@ -56,18 +88,20 @@ function CartPage() {
                                                 }
                                             >
                                                 <button
-                                                    // onClick={() =>
-                                                    //     minusQty(item)
-                                                    // }
+                                                    onClick={() =>
+                                                        decrement(
+                                                            item.id,
+                                                            item.count
+                                                        )
+                                                    }
                                                     className={
                                                         styles.cart__minus
                                                     }
                                                 >
-                                                    {/* <img
+                                                    <img
                                                         src={minus}
                                                         alt="minus"
-                                                    /> */}
-                                                    -
+                                                    />
                                                 </button>
                                                 <div
                                                     className={
@@ -77,18 +111,20 @@ function CartPage() {
                                                     {item.count}
                                                 </div>
                                                 <button
-                                                    // onClick={() =>
-                                                    //     plusQty(item)
-                                                    // }
+                                                    onClick={() =>
+                                                        increment(
+                                                            item.id,
+                                                            item.count
+                                                        )
+                                                    }
                                                     className={
                                                         styles.cart__plus
                                                     }
                                                 >
-                                                    {/* <img
+                                                    <img
                                                         src={plus}
                                                         alt="plus"
-                                                    /> */}
-                                                    +
+                                                    />
                                                 </button>
                                             </div>
                                         </div>
@@ -98,9 +134,9 @@ function CartPage() {
                                             }
                                         >
                                             <button
-                                                // onClick={() => {
-                                                //     removeItemFromCart(item);
-                                                // }}
+                                                onClick={() => {
+                                                    deleteItem(item.id);
+                                                }}
                                                 className={
                                                     styles.cart__item_exit
                                                 }
@@ -115,7 +151,7 @@ function CartPage() {
                                                     styles.cart__item_price
                                                 }
                                             >
-                                                £ {item.price * item.count}
+                                                €{item.price * item.count}
                                             </div>
                                         </div>
                                     </div>
@@ -127,21 +163,24 @@ function CartPage() {
                 <div className={styles.cart__footer}>
                     <div className={styles.cart__total}>
                         <div className={styles.cart__total_title}>Total</div>
-                        <div className={styles.cart__total_summ}>2222</div>
+                        <div className={styles.cart__total_summ}>
+                            €{caclTotal()}
+                        </div>
                     </div>
                     <div className={styles.cart__buttons}>
                         <button
                             onClick={() => {
                                 document.body.classList.remove('hidden');
+                                setCartActive(false);
                             }}
                             className={styles.cart__button_pay}
                         >
-                            <Link to="/gucci-react/purchase">Order now</Link>
+                            <Link to="">Order now</Link>
                         </button>
                         <button
                             onClick={() => {
-                                // modal.setModalActive(false);
                                 document.body.classList.remove('hidden');
+                                setCartActive(false);
                             }}
                             className={styles.cart__button_continue}
                         >

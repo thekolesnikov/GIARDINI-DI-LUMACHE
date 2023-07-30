@@ -10,7 +10,7 @@
 }
 
 .item__name {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 6px;
@@ -68,7 +68,7 @@
 }
 
 .item__description {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 140%;
     margin-bottom: 71px;
 }
@@ -78,11 +78,19 @@
     padding: 15px;
     text-align: center;
     width: 100%;
-    background-color: #333333;
+    background-color: #000000;
     color: #fff;
     font-size: 24px;
     text-transform: capitalize;
     margin-bottom: 24px;
+    border-radius: 2px;
+    border: 2px solid #000000;
+    transition: all 0.3s ease;
+}
+
+.item__button:hover {
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .item__details {

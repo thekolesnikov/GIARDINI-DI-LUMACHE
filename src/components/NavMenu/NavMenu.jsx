@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import logo from './img/logo.svg';
@@ -7,9 +8,8 @@ import CartPage from '../../pages/CartPage/CartPage';
 import { showCart } from '../../redux/slices/cartActiveSlice';
 
 function NavMenu() {
+    const [cartActive, setCartActive] = useState(false);
     const items = useSelector((state) => state.items);
-    const dispatch = useDispatch();
-    console.log(items);
 
     return (
         <header>
@@ -24,8 +24,8 @@ function NavMenu() {
                     <button
                         className={styles.header__nav_btn}
                         onClick={() => {
+                            setCartActive(true);
                             document.body.classList.add('hidden');
-                            dispatch(() => showCart());
                         }}
                     >
                         Cart {items.length}
@@ -34,7 +34,7 @@ function NavMenu() {
                 </nav>
             </div>
             <HorizontalLine />
-            <CartPage />
+            {cartActive && <CartPage setCartActive={setCartActive} />}
         </header>
     );
 }

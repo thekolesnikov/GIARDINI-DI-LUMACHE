@@ -26,14 +26,23 @@ export const itemsSlice = createSlice({
                     count: action.payload.count,
                     img: action.payload.img,
                     id: action.payload.id,
+                    price: action.payload.price,
                 });
             }
         },
-        // deleteTransaction(state, action) {
-        //     return state.filter(
-        //         (transaction) => transaction.id !== action.payload
-        //     );
-        // },
+        deleteFromCart(state, action) {
+            return state.filter((item) => item.id !== action.payload);
+        },
+        incrementCount(state, action) {
+            const item = state.find((item) => item.id === action.payload.id);
+            item.count++;
+        },
+        decrementCount(state, action) {
+            const item = state.find((item) => item.id === action.payload.id);
+            if (item.count > 1) {
+                item.count--;
+            }
+        },
     },
     // extraReducers: {
     //     [fetchItems.fulfilled]: (state, action) => {
@@ -43,4 +52,5 @@ export const itemsSlice = createSlice({
 });
 
 export default itemsSlice.reducer;
-export const { addToCart } = itemsSlice.actions;
+export const { addToCart, deleteFromCart, incrementCount, decrementCount } =
+    itemsSlice.actions;
