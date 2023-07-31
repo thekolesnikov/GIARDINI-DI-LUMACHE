@@ -38,7 +38,7 @@ function CartPage({ setCartActive }) {
     async function sentEmail() {
         const res = await fetch('/sendmail.php', {
             method: 'POST',
-            body: items,
+            body: JSON.stringify(items),
         });
         console.log(res);
     }
