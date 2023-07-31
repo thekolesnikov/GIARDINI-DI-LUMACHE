@@ -35,6 +35,14 @@ function CartPage({ setCartActive }) {
         return total.toFixed(2);
     }
 
+    async function sentEmail() {
+        const res = await fetch('/sendmail.php', {
+            method: 'POST',
+            body: items,
+        });
+        console.log(res);
+    }
+
     return (
         <div
             onClick={() => {
@@ -172,10 +180,11 @@ function CartPage({ setCartActive }) {
                             onClick={() => {
                                 document.body.classList.remove('hidden');
                                 setCartActive(false);
+                                sentEmail();
                             }}
                             className={styles.cart__button_pay}
                         >
-                            <Link to="">Order now</Link>
+                            <Link>Order now</Link>
                         </button>
                         <button
                             onClick={() => {

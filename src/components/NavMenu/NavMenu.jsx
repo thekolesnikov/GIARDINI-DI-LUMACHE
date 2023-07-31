@@ -20,7 +20,7 @@ function NavMenu() {
                 <nav className={styles.header__nav}>
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/shop">Shop</NavLink>
-                    <NavLink to="about">About</NavLink>
+                    <NavLink to="/about">About</NavLink>
                     <button
                         className={styles.header__nav_btn}
                         onClick={() => {
@@ -30,7 +30,7 @@ function NavMenu() {
                     >
                         Cart {items.length}
                     </button>
-                    <NavLink>Contact us</NavLink>
+                    <NavLink to="/contacts">Contact us</NavLink>
                 </nav>
             </div>
             <HorizontalLine />
