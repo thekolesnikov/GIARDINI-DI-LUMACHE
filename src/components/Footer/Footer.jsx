@@ -52,6 +52,16 @@ function Footer() {
                     </a>
                 </div>
             </div>
+            <div className={styles.footer__nav_mobile}>
+                <a className={styles.footer__text} href="">
+                    instagram
+                </a>
+                <div className={styles.footer__langueges}>
+                    <button className={styles.footer__text}>ENG</button>
+                    <span className={styles.footer__span}> / </span>
+                    <button className={styles.footer__text}> IT</button>
+                </div>
+            </div>
         </footer>
     );
 }

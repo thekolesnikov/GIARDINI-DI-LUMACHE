@@ -4,7 +4,14 @@ import philosophyImg from './img/philosophy.jpg';
 function PhilosophyAbout() {
     return (
         <div className={styles.philosophy}>
-            <div className={styles.philosophy__title}>philosophy</div>
+            <div className={styles.philosophy__header}>
+                <div className={styles.philosophy__title}>philosophy</div>
+                <img
+                    className={styles.philosophy__mobile}
+                    src={philosophyImg}
+                    alt="philosophyImg"
+                />
+            </div>
             <div className={styles.philosophy__content}>
                 <p className={styles.philosophy__text}>
                     We take pride in producing high-quality snails for escargot

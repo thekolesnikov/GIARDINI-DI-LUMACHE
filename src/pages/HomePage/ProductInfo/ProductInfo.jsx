@@ -21,12 +21,15 @@ function ProductInfo() {
                     eco-certified snails and savor the taste of Italian
                     excellence while supporting sustainable farming practices.
                 </div>
-            </div>
-            <div className={styles.product__images}>
-                <div>
+                <div className={styles.product__images_small_mobile}>
                     <img src={productleft} alt="product" />
                 </div>
-                <div>
+            </div>
+            <div className={styles.product__images}>
+                <div className={styles.product__images_small}>
+                    <img src={productleft} alt="product" />
+                </div>
+                <div className={styles.product__images_big}>
                     <img src={productright} alt="product" />
                 </div>
             </div>

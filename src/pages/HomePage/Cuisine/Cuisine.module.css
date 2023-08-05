@@ -46,3 +46,175 @@
     text-decoration-line: underline;
     text-align: center;
 }
+
+.cuisine__content_mobile {
+    display: none;
+}
+
+@media (max-width: 1500px) {
+    .cuisine__textcontent {
+        font-size: 46px;
+    }
+
+    .cuisine__img img {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .cuisine__textcontent {
+        top: 40px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .cuisine__text {
+        max-width: 600px;
+        font-size: 22px;
+    }
+
+    .cuisine__link {
+        font-size: 22px;
+    }
+
+    .cuisine__title {
+        font-size: 36px;
+    }
+
+    .cuisine__textcontent {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .cuisine__text {
+        max-width: 430px;
+        font-size: 20px;
+    }
+
+    .cuisine__link {
+        font-size: 20px;
+    }
+
+    .cuisine__title {
+        font-size: 32px;
+    }
+
+    .cuisine__textcontent {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 950px) {
+    .cuisine__text {
+        font-size: 18px;
+    }
+
+    .cuisine__link {
+        font-size: 18px;
+    }
+
+    .cuisine__title {
+        font-size: 28px;
+    }
+
+    .cuisine__textcontent {
+        top: 15px;
+        font-size: 32px;
+    }
+
+    .cuisine__info {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 800px) {
+    .cuisine {
+        margin: 50px 0 100px;
+    }
+    .cuisine__text {
+        max-width: 370px;
+        font-size: 16px;
+    }
+
+    .cuisine__link {
+        font-size: 16px;
+    }
+
+    .cuisine__title {
+        font-size: 24px;
+    }
+
+    .cuisine__textcontent {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 630px) {
+    .cuisine {
+        margin-bottom: 200px;
+    }
+    .cuisine__info {
+        display: block;
+    }
+
+    .cuisine__title {
+        margin-bottom: 30px;
+    }
+    .cuisine__text {
+        max-width: none;
+        font-size: 16px;
+    }
+
+    .cuisine__content {
+        display: none;
+    }
+
+    .cuisine__link {
+        margin-bottom: 50px;
+        text-align: left;
+    }
+
+    .cuisine__content_mobile {
+        display: block;
+        position: relative;
+    }
+
+    .cuisine__textcontent {
+        top: 40px;
+        text-indent: 100px;
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cuisine {
+        margin-bottom: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cuisine {
+        margin-bottom: 370px;
+    }
+}
+
+@media (max-width: 430px) {
+    .cuisine__title {
+        font-size: 20px;
+    }
+
+    .cuisine {
+        margin: 30px 0 450px;
+    }
+
+    .cuisine__info {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 370px) {
+    .cuisine {
+        margin-bottom: 520px;
+    }
+}

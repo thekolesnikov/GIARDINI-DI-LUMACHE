@@ -18,8 +18,141 @@
 }
 
 .header__nav_btn {
+    position: relative;
     cursor: pointer;
     background-color: #fefced;
     font-size: 20px;
     font-family: 'Noto Serif', serif;
+}
+
+.header__nav_btn_badge {
+    position: absolute;
+    top: 2px;
+    right: -32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #304f40;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 100%;
+    color: #ffffff;
+}
+
+.header__burger {
+    display: none;
+}
+
+.header__burger button {
+    cursor: pointer;
+    background-color: #fefced;
+}
+
+.header__burger_menu {
+    display: none;
+}
+
+@media (max-width: 1250px) {
+    .header__nav {
+        margin-right: 0px;
+        max-width: 600px;
+        gap: 74.5px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .header__nav {
+        max-width: 430px;
+        gap: 32px;
+    }
+    .header__nav_btn_badge {
+        right: -25px;
+    }
+}
+
+@media (max-width: 800px) {
+    .header__nav {
+        gap: 40px;
+    }
+
+    .header__burger {
+        display: block;
+    }
+
+    .header__nav {
+        display: none;
+    }
+    .header__burger_menu {
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .header__nav_mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-end;
+        margin-top: 34px;
+    }
+
+    .header__nav_mobile a {
+        font-size: 48px;
+        font-weight: 300;
+        color: #000000;
+        text-transform: uppercase;
+    }
+
+    .header__nav_mobile_btn {
+        cursor: pointer;
+        background-color: #fefced;
+        font-size: 48px;
+        font-weight: 300;
+        font-family: 'Noto Serif', serif;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer__nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer__text {
+        font-size: 16px;
+        line-height: 140%;
+        text-decoration-line: underline;
+        text-transform: uppercase;
+        color: #000000;
+    }
+
+    .footer__text {
+        background-color: #fefced;
+        font-size: 16px;
+        line-height: 140%;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .header__nav_btn_badge {
+        position: relative;
+        top: 0px;
+        right: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #304f40;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 100%;
+        color: #ffffff;
+    }
 }

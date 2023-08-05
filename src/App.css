@@ -17,3 +17,21 @@ body {
 .hidden {
     overflow: hidden;
 }
+
+@media (max-width: 1550px) {
+    .container {
+        margin: 0 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        margin: 0 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        margin: 0 18px;
+    }
+}

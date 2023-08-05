@@ -8,7 +8,81 @@
 .banner__title {
     max-width: 1127px;
     font-size: 86px;
-    line-height: 109.1px;
+    line-height: 126%;
     text-transform: uppercase;
     text-indent: 383px;
+    padding-left: -20px;
+    margin-left: 20px;
+}
+
+@media (max-width: 1500px) {
+    .banner__title {
+        font-size: 74px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .banner {
+        margin: 135px 0 160px;
+    }
+    .banner__title {
+        font-size: 66px;
+        text-indent: 203px;
+    }
+}
+
+@media (max-width: 1160px) {
+    .banner {
+        margin: 100px 0 120px;
+    }
+    .banner__title {
+        font-size: 52px;
+        text-indent: 140px;
+    }
+}
+
+@media (max-width: 800px) {
+    .banner {
+        margin: 80px 0 100px;
+    }
+    .banner__title {
+        font-size: 52px;
+        text-indent: 140px;
+    }
+}
+
+@media (max-width: 750px) {
+    .banner img {
+        width: 150px;
+    }
+    .banner__title {
+        font-size: 44px;
+        text-indent: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner {
+        margin: 60px 0 80px;
+    }
+    .banner img {
+        width: 130px;
+    }
+    .banner__title {
+        font-size: 38px;
+        text-indent: 40px;
+    }
+}
+
+@media (max-width: 520px) {
+    .banner {
+        margin: 50px 0;
+    }
+    .banner img {
+        width: 75px;
+    }
+    .banner__title {
+        font-size: 30px;
+        text-indent: 0px;
+    }
 }

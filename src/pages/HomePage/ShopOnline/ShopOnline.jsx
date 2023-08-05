@@ -24,13 +24,15 @@ function ShopOnline() {
             <div className={styles.shop__items}>
                 {items.splice(0, 4).map((item) => {
                     return (
-                        <ItemCard
-                            key={item.id}
-                            id={item.id}
-                            img={item.img}
-                            name={item.name}
-                            price={item.price}
-                        />
+                        <div className={styles.shop__item}>
+                            <ItemCard
+                                key={item.id}
+                                id={item.id}
+                                img={item.img}
+                                name={item.name}
+                                price={item.price}
+                            />
+                        </div>
                     );
                 })}
             </div>

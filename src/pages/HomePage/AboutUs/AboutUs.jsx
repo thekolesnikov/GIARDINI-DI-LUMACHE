@@ -33,6 +33,9 @@ function AboutUs() {
                         LEARN MORE
                     </Link>
                 </div>
+                <div className={styles.about__img_mobile}>
+                    <img src={aboutImg} alt="about" />
+                </div>
             </div>
             <HorizontalLine />
         </>

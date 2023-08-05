@@ -1,10 +1,13 @@
 .shop {
     display: flex;
-    justify-content: space-between;
+    gap: 190px;
     padding-bottom: 210px;
 }
 
-.shop:last-child {
+.shop2 {
+    display: flex;
+    gap: 172px;
+    padding-bottom: 210px;
     border-bottom: 2px solid #000000;
 }
 
@@ -17,7 +20,38 @@
 .shop__items {
     max-width: 1127px;
     display: flex;
-    column-gap: 18px;
+    justify-content: space-between;
     row-gap: 30px;
     flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .shop,
+    .shop2 {
+        padding-bottom: 100px;
+    }
+}
+
+@media (max-width: 900px) {
+    .shop {
+        gap: 105px;
+    }
+
+    .shop2 {
+        gap: 85px;
+    }
+}
+
+@media (max-width: 600px) {
+    .shop,
+    .shop2 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-bottom: 50px;
+    }
+
+    .shop__title {
+        font-size: 20px;
+    }
 }

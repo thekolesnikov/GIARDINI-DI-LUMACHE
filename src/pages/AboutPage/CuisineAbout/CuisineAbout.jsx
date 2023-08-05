@@ -8,7 +8,11 @@ function CuisineAbout() {
             <div className={styles.cuisine__title}>Cuisine</div>
             <div className={styles.cuisine__images}>
                 <img src={cuisineImgBig} alt="cuisine" />
-                <img src={cuisineImgSmall} alt="cuisine" />
+                <img
+                    className={styles.cuisine__images_none}
+                    src={cuisineImgSmall}
+                    alt="cuisine"
+                />
             </div>
             <p className={styles.cuisine__text}>
                 From farm to plate, every step is carefully managed to ensure

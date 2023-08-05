@@ -14,7 +14,7 @@ function ShopPage() {
         <>
             <Banner />
             <div className={styles.shop}>
-                <p className={styles.shop__title}>Fresh</p>
+                <div className={styles.shop__title}>Fresh</div>
                 <div className={styles.shop__items}>
                     {items.map((item) => {
                         if (item.category === 'fresh') {
@@ -31,8 +31,8 @@ function ShopPage() {
                     })}
                 </div>
             </div>
-            <div className={styles.shop}>
-                <p className={styles.shop__title}>Cooked</p>
+            <div className={styles.shop2}>
+                <div className={styles.shop__title}>Cooked</div>
                 <div className={styles.shop__items}>
                     {items.map((item) => {
                         if (item.category === 'cooked') {

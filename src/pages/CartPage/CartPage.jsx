@@ -159,7 +159,10 @@ function CartPage({ setCartActive }) {
                                                     styles.cart__item_price
                                                 }
                                             >
-                                                €{item.price * item.count}
+                                                €
+                                                {(
+                                                    item.price * item.count
+                                                ).toFixed(2)}
                                             </div>
                                         </div>
                                     </div>

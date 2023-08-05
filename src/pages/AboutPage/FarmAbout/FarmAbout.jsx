@@ -37,14 +37,14 @@ function FarmAbout() {
             <div className={styles.farm__content}>
                 <div>
                     <img
-                        className={styles.farm__content_img}
+                        className={styles.farm__content_img_small}
                         src={farmImgSmall}
                         alt="farm"
                     />
                 </div>
                 <div>
                     <img
-                        className={styles.farm__content_img}
+                        className={styles.farm__content_img_big}
                         src={farmImgBig}
                         alt="farm"
                     />
@@ -54,6 +54,9 @@ function FarmAbout() {
                     sustainable farming practices by savoring snails, straight
                     from our farm to your plate.
                 </p>
+            </div>
+            <div className={styles.farm__content_img_mobile}>
+                <img src={farmImgSmall} alt="farm" />
             </div>
         </div>
     );
