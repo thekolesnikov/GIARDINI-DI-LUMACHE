@@ -1,17 +1,23 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import logo from './img/logo.svg';
 import styles from './NavMenu.module.css';
 import HorizontalLine from '../HorizontalLine/HorizontalLine';
 import CartPage from '../../pages/CartPage/CartPage';
 import burgerImg from './img/Burger.svg';
 import closeImg from './img/close.svg';
+import { setLanguage } from '../../redux/slices/languageSlice';
 
 function NavMenu() {
     const [cartActive, setCartActive] = useState(false);
     const [isBurgerOpen, setIsBurgerOpen] = useState(false);
     const items = useSelector((state) => state.items);
+
+    const languages = ['ENG', 'IT', 'RU'];
+    const dispatch = useDispatch();
+    const activeLanguege = useSelector((state) => state.language.language);
+    console.log(activeLanguege);
 
     return (
         <header>
@@ -125,9 +131,28 @@ function NavMenu() {
                             instagram
                         </a>
                         <div className={styles.footer__langueges}>
-                            <button className={styles.footer__text}>ENG</button>
-                            <span className={styles.footer__span}> / </span>
-                            <button className={styles.footer__text}> IT</button>
+                            {languages.map((item) => {
+                                return (
+                                    <div key={item}>
+                                        <button
+                                            onClick={() => {
+                                                dispatch(setLanguage(item));
+                                                setIsBurgerOpen(false);
+                                                document.body.classList.remove(
+                                                    'hidden'
+                                                );
+                                            }}
+                                            className={
+                                                activeLanguege === item
+                                                    ? styles.footer__text_underline
+                                                    : styles.footer__text
+                                            }
+                                        >
+                                            {item}
+                                        </button>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

@@ -124,19 +124,19 @@
     }
 
     .footer__text {
-        font-size: 16px;
-        line-height: 140%;
-        text-decoration-line: underline;
-        text-transform: uppercase;
-        color: #000000;
-    }
-
-    .footer__text {
         background-color: #fefced;
         font-size: 16px;
         line-height: 140%;
         text-transform: uppercase;
         cursor: pointer;
+    }
+    .footer__text_underline {
+        background-color: #fefced;
+        font-size: 16px;
+        line-height: 140%;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: underline;
     }
 
     .header__nav_btn_badge {
@@ -154,5 +154,10 @@
         font-weight: 600;
         line-height: 100%;
         color: #ffffff;
+    }
+
+    .footer__langueges {
+        display: flex;
+        gap: 10px;
     }
 }

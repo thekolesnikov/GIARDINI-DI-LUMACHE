@@ -1,6 +1,11 @@
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './Footer.module.css';
+import { setLanguage } from '../../redux/slices/languageSlice';
 
 function Footer() {
+    const languages = ['ENG', 'IT', 'RU'];
+    const dispatch = useDispatch();
+    const activeLanguege = useSelector((state) => state.language.language);
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__left}>
@@ -10,9 +15,27 @@ function Footer() {
                         instagram
                     </a>
                     <div className={styles.footer__langueges}>
-                        <button className={styles.footer__text}>ENG</button>
-                        <span className={styles.footer__span}> / </span>
-                        <button className={styles.footer__text}> IT</button>
+                        {languages.map((item) => {
+                            return (
+                                <div key={item}>
+                                    <button
+                                        onClick={() =>
+                                            dispatch(setLanguage(item))
+                                        }
+                                        className={
+                                            activeLanguege === item
+                                                ? styles.footer__text_underline
+                                                : styles.footer__text
+                                        }
+                                    >
+                                        {item}
+                                    </button>
+                                    <span className={styles.footer__span}>
+                                        {' / '}
+                                    </span>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
@@ -57,9 +80,25 @@ function Footer() {
                     instagram
                 </a>
                 <div className={styles.footer__langueges}>
-                    <button className={styles.footer__text}>ENG</button>
-                    <span className={styles.footer__span}> / </span>
-                    <button className={styles.footer__text}> IT</button>
+                    {languages.map((item) => {
+                        return (
+                            <div key={item}>
+                                <button
+                                    onClick={() => dispatch(setLanguage(item))}
+                                    className={
+                                        activeLanguege === item
+                                            ? styles.footer__text_underline
+                                            : styles.footer__text
+                                    }
+                                >
+                                    {item}
+                                </button>
+                                <span className={styles.footer__span}>
+                                    {' / '}
+                                </span>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </footer>

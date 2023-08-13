@@ -1,14 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [];
-
-// export const fetchItems = createAsyncThunk('items/fetchItems', async () => {
-//     const response = await fetch(
-//         'https://64c0ffa1fa35860bae9fc1d2.mockapi.io/items'
-//     );
-//     const data = await response.json();
-//     return data;
-// });
 
 export const itemsSlice = createSlice({
     name: 'items',

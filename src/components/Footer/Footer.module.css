@@ -28,9 +28,19 @@
     cursor: pointer;
 }
 
-.footer__span {
-    font-size: 24px;
+.footer__text_underline {
+    background-color: #fefced;
+    font-size: 20px;
     text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footer__span {
+    background-color: #fefced;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .footer__right {
@@ -60,12 +70,16 @@
     text-decoration-line: underline;
 }
 
-.footer__langueges button:nth-child(1) {
-    text-decoration: underline;
-}
-
 .footer__nav_mobile {
     display: none;
+}
+
+.footer__langueges {
+    display: flex;
+}
+
+.footer__langueges div:last-child span {
+    display: none !important;
 }
 
 @media (max-width: 1350px) {
