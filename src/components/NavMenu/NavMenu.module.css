@@ -170,10 +170,14 @@
     }
 
     .footer__nav {
-        display: flex;
-        justify-content: space-between;
         position: fixed;
         bottom: 0;
+        width: 92%;
+    }
+
+    .footer__nav_flex {
+        display: flex;
+        justify-content: space-between;
     }
 
     .footer__text {

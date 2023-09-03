@@ -167,32 +167,36 @@ function NavMenu({ badgeVisible }) {
                             </NavLink>
                         </nav>
                         <div className={styles.footer__nav}>
-                            <a className={styles.footer__text} href="">
-                                instagram
-                            </a>
-                            <div className={styles.footer__langueges}>
-                                {languages.map((item) => {
-                                    return (
-                                        <div key={item}>
-                                            <button
-                                                onClick={() => {
-                                                    dispatch(setLanguage(item));
-                                                    setIsBurgerOpen(false);
-                                                    document.body.classList.remove(
-                                                        'hidden'
-                                                    );
-                                                }}
-                                                className={
-                                                    activeLanguege === item
-                                                        ? styles.footer__text_underline
-                                                        : styles.footer__text
-                                                }
-                                            >
-                                                {item}
-                                            </button>
-                                        </div>
-                                    );
-                                })}
+                            <div className={styles.footer__nav_flex}>
+                                <a className={styles.footer__text} href="">
+                                    instagram
+                                </a>
+                                <div className={styles.footer__langueges}>
+                                    {languages.map((item) => {
+                                        return (
+                                            <div key={item}>
+                                                <button
+                                                    onClick={() => {
+                                                        dispatch(
+                                                            setLanguage(item)
+                                                        );
+                                                        setIsBurgerOpen(false);
+                                                        document.body.classList.remove(
+                                                            'hidden'
+                                                        );
+                                                    }}
+                                                    className={
+                                                        activeLanguege === item
+                                                            ? styles.footer__text_underline
+                                                            : styles.footer__text
+                                                    }
+                                                >
+                                                    {item}
+                                                </button>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </div>
