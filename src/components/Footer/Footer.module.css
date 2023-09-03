@@ -22,6 +22,7 @@
 }
 
 .footer__text {
+    color: #282828;
     background-color: #fefced;
     font-size: 20px;
     text-transform: uppercase;
@@ -29,6 +30,7 @@
 }
 
 .footer__text_underline {
+    color: #282828;
     background-color: #fefced;
     font-size: 20px;
     text-transform: uppercase;

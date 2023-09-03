@@ -156,6 +156,7 @@
     }
 
     .header__nav_mobile_btn {
+        color: #282828;
         cursor: pointer;
         background-color: #fefced;
         font-size: 48px;
