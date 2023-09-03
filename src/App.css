@@ -8,6 +8,7 @@ body {
 .container {
     max-width: 1507px;
     margin: 0 auto;
+    position: relative;
 }
 
 .active {

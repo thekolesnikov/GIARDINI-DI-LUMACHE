@@ -14,7 +14,8 @@ export const itemsSlice = createSlice({
                 existItem.count += action.payload.count;
             } else {
                 state.push({
-                    name: action.payload.name,
+                    nameEng: action.payload.nameEng,
+                    nameIt: action.payload.nameIt,
                     count: action.payload.count,
                     img: action.payload.img,
                     id: action.payload.id,
@@ -33,16 +34,21 @@ export const itemsSlice = createSlice({
             const item = state.find((item) => item.id === action.payload.id);
             if (item.count > 1) {
                 item.count--;
+            } else {
+                return state.filter((item) => item.id !== action.payload.id);
             }
         },
+        resetCart(state) {
+            return initialState;
+        },
     },
-    // extraReducers: {
-    //     [fetchItems.fulfilled]: (state, action) => {
-    //         state.push(...action.payload);
-    //     },
-    // },
 });
 
 export default itemsSlice.reducer;
-export const { addToCart, deleteFromCart, incrementCount, decrementCount } =
-    itemsSlice.actions;
+export const {
+    addToCart,
+    deleteFromCart,
+    incrementCount,
+    decrementCount,
+    resetCart,
+} = itemsSlice.actions;

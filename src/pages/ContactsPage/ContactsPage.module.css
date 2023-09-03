@@ -1,0 +1,9 @@
+.contacts {
+    margin-top: 120px;
+}
+
+@media (max-width: 1000px) {
+    .contacts {
+        margin-top: 90px;
+    }
+}

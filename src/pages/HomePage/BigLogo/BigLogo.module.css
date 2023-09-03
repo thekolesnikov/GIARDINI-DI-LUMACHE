@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 186px 0 44px;
+    margin: 250px 0 44px;
 }
 
 .title__text {
@@ -42,7 +42,7 @@
     }
 
     .title {
-        margin: 130px 0 30px;
+        margin: 200px 0 30px;
     }
 }
 
@@ -52,7 +52,7 @@
     }
 
     .title {
-        margin: 100px 0 24px;
+        margin: 170px 0 24px;
     }
 }
 
@@ -68,17 +68,13 @@
     }
 
     .title {
-        margin: 80px 0 24px;
+        margin: 150px 0 24px;
     }
 }
 
 @media (max-width: 640px) {
     .title__text {
         font-size: 40px;
-    }
-
-    .title {
-        margin: 80px 0 24px;
     }
 }
 
@@ -88,7 +84,7 @@
     }
 
     .title {
-        margin: 60px 0 20px;
+        margin: 130px 0 20px;
     }
 }
 
@@ -97,7 +93,7 @@
         font-size: 30px;
     }
     .title {
-        margin: 48px 0 15px;
+        margin: 110px 0 15px;
     }
 }
 

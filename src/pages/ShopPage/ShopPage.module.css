@@ -1,12 +1,12 @@
 .shop {
     display: flex;
-    gap: 190px;
+    gap: 273px;
     padding-bottom: 210px;
 }
 
 .shop2 {
     display: flex;
-    gap: 172px;
+    gap: 273px;
     padding-bottom: 210px;
     border-bottom: 2px solid #000000;
 }
@@ -15,6 +15,7 @@
     font-size: 24px;
     font-weight: 500;
     text-transform: capitalize;
+    width: 105px;
 }
 
 .shop__items {
@@ -22,7 +23,15 @@
     display: flex;
     justify-content: space-between;
     row-gap: 30px;
+    column-gap: 18px;
     flex-wrap: wrap;
+}
+
+@media (max-width: 1400px) {
+    .shop,
+    .shop2 {
+        gap: 155px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -33,12 +42,9 @@
 }
 
 @media (max-width: 900px) {
-    .shop {
-        gap: 105px;
-    }
-
+    .shop,
     .shop2 {
-        gap: 85px;
+        gap: 105px;
     }
 }
 

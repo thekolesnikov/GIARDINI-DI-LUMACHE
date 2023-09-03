@@ -10,21 +10,49 @@ import {
     incrementCount,
     decrementCount,
 } from '../../redux/slices/itemsSlice';
+import { removeFromLS, incrementLS, decrementLS } from '../../utils/addToLS';
 
-function CartPage({ setCartActive }) {
+function CartPage({ setCartActive, setIsFormVisible }) {
     const items = useSelector((state) => state.items);
     const dispatch = useDispatch();
+    const activeLanguege = useSelector((state) => state.language.language);
+
+    const cartNames = [
+        {
+            IT: 'Il tuo carrello ',
+            ENG: 'Your Cart',
+        },
+        {
+            IT: 'Il tuo carrello è vuoto!!!',
+            ENG: 'Your cart is empty!!!',
+        },
+        {
+            IT: 'Totale',
+            ENG: 'Total',
+        },
+        {
+            IT: 'Ordina adesso',
+            ENG: 'Order now',
+        },
+        {
+            IT: 'Continua con gli acquisti',
+            ENG: 'Continue shopping',
+        },
+    ];
 
     function deleteItem(id) {
         dispatch(deleteFromCart(id));
+        removeFromLS(id);
     }
 
     function increment(id, count) {
         dispatch(incrementCount({ id, count }));
+        incrementLS(id);
     }
 
     function decrement(id, count) {
         dispatch(decrementCount({ id, count }));
+        decrementLS(id);
     }
 
     function caclTotal() {
@@ -40,7 +68,6 @@ function CartPage({ setCartActive }) {
             method: 'POST',
             body: JSON.stringify(items),
         });
-        console.log(res);
     }
 
     return (
@@ -52,13 +79,15 @@ function CartPage({ setCartActive }) {
             className={styles.cart__background}
         >
             <div onClick={(e) => e.stopPropagation()} className={styles.cart}>
-                <div className={styles.cart__title}>Your Cart</div>
+                <div className={styles.cart__title}>
+                    {cartNames[0][activeLanguege]}
+                </div>
                 <div className={styles.cart__items}>
                     {items.length === 0 && (
                         <div className={styles.cart__empty}>
                             Ohhh
                             <br />
-                            Your cart is empty!!!
+                            {cartNames[1][activeLanguege]}
                         </div>
                     )}
                     {items?.map((item) => {
@@ -80,7 +109,9 @@ function CartPage({ setCartActive }) {
                                                         styles.cart__item_name
                                                     }
                                                 >
-                                                    {item.name}
+                                                    {activeLanguege === 'ENG'
+                                                        ? item.nameEng
+                                                        : item.nameIt}
                                                 </div>
                                                 <div
                                                     className={
@@ -173,22 +204,26 @@ function CartPage({ setCartActive }) {
                 </div>
                 <div className={styles.cart__footer}>
                     <div className={styles.cart__total}>
-                        <div className={styles.cart__total_title}>Total</div>
+                        <div className={styles.cart__total_title}>
+                            {cartNames[2][activeLanguege]}
+                        </div>
                         <div className={styles.cart__total_summ}>
                             €{caclTotal()}
                         </div>
                     </div>
                     <div className={styles.cart__buttons}>
-                        <button
-                            onClick={() => {
-                                document.body.classList.remove('hidden');
-                                setCartActive(false);
-                                sentEmail();
-                            }}
-                            className={styles.cart__button_pay}
-                        >
-                            <Link>Order now</Link>
-                        </button>
+                        {items.length > 0 && (
+                            <button
+                                onClick={() => {
+                                    setCartActive(false);
+                                    setIsFormVisible(true);
+                                }}
+                                className={styles.cart__button_pay}
+                            >
+                                <Link>{cartNames[3][activeLanguege]}</Link>
+                            </button>
+                        )}
+
                         <button
                             onClick={() => {
                                 document.body.classList.remove('hidden');
@@ -196,18 +231,10 @@ function CartPage({ setCartActive }) {
                             }}
                             className={styles.cart__button_continue}
                         >
-                            Continue shopping
+                            {cartNames[4][activeLanguege]}
                         </button>
                     </div>
                 </div>
-                {/* {badgeActive ? (
-                    <UniversalCartBadge
-                        text="Item was removed from Cart"
-                        color="#da5353"
-                    />
-                ) : (
-                    ''
-                )} */}
             </div>
         </div>
     );

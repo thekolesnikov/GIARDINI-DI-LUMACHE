@@ -49,7 +49,7 @@ function Cuisine() {
                         {bigText[activeLanguege]}
                     </div>
                 </div>
-                <Link className={styles.cuisine__link}>
+                <Link className={styles.cuisine__link} to="/about">
                     {link[activeLanguege]}
                 </Link>
                 <div className={styles.cuisine__content_mobile}>

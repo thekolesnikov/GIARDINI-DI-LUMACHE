@@ -1,16 +1,36 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useOutletContext, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './ItemPage.module.css';
 import { fetchItems } from '../../utils/fetchItems';
 import { addToCart } from '../../redux/slices/itemsSlice';
 import arrow from './img/arrow.svg';
+import { addToLS } from '../../utils/addToLS';
 
 function ItemPage() {
     const [items, setItems] = useState([]);
     const [count, setCount] = useState(1);
+    const [detailsVisible, setDetailsVisible] = useState(false);
     const params = useParams();
     const dispatch = useDispatch();
+    const setBadgeVisible = useOutletContext();
+
+    const activeLanguege = useSelector((state) => state.language.language);
+
+    const itemNames = [
+        {
+            IT: 'Aggiungi al carrello',
+            ENG: 'Add to Cart',
+        },
+        {
+            IT: 'dettagli  ordine',
+            ENG: 'order details',
+        },
+        {
+            IT: 'Pagina non trovata',
+            ENG: 'Page not found',
+        },
+    ];
 
     useEffect(() => {
         fetchItems(setItems);
@@ -28,16 +48,21 @@ function ItemPage() {
     }
 
     function addCart() {
-        dispatch(
-            addToCart({
-                id: data[0].id,
-                name: data[0].name,
-                count,
-                img: data[0].img,
-                price: data[0].price,
-            })
-        );
+        const item = {
+            id: data[0].id,
+            nameEng: data[0].nameEng,
+            nameIt: data[0].nameIt,
+            count,
+            img: data[0].img,
+            price: data[0].price,
+        };
+        dispatch(addToCart(item));
+        addToLS(item);
         setCount(1);
+        setBadgeVisible(true);
+        setTimeout(() => {
+            setBadgeVisible(false);
+        }, 2500);
     }
 
     return (
@@ -48,7 +73,11 @@ function ItemPage() {
                         <img src={data[0].img} alt="snail" />
                     </div>
                     <div className={styles.item__info}>
-                        <h2 className={styles.item__name}>{data[0].name}</h2>
+                        <h2 className={styles.item__name}>
+                            {activeLanguege === 'ENG'
+                                ? data[0].nameEng
+                                : data[0].nameIt}
+                        </h2>
                         <div className={styles.item__flex}>
                             <span className={styles.item__price}>
                                 €{data[0].price} /
@@ -73,32 +102,42 @@ function ItemPage() {
                             </div>
                         </div>
                         <p className={styles.item__description}>
-                            We take pride in producing high-quality snails for
-                            escargot and an array of other exquisite products.
-                            With a strong commitment to eco-friendly practices,
-                            our farm operates under stringent ecological
-                            standards. Our snails thrive in a natural and
-                            sustainable environment, resulting in exceptional
-                            flavor and texture.
+                            {activeLanguege === 'ENG'
+                                ? data[0].descEng
+                                : data[0].descIt}
                         </p>
                         <button
                             className={styles.item__button}
                             onClick={addCart}
                         >
-                            Add to Cart
+                            {itemNames[0][activeLanguege]}
                         </button>
                         <div className={styles.item__details}>
                             <p className={styles.item__details_text}>
-                                order details
+                                {itemNames[1][activeLanguege]}
                             </p>
-                            <button className={styles.item__details_btn}>
+                            <button
+                                className={`${styles.item__details_btn} ${
+                                    detailsVisible ? styles.active : ''
+                                }`}
+                                onClick={() =>
+                                    setDetailsVisible(!detailsVisible)
+                                }
+                            >
                                 <img src={arrow} alt="more details" />
                             </button>
                         </div>
+                        {detailsVisible && (
+                            <div className={styles.item__details_body}>
+                                {activeLanguege === 'ENG'
+                                    ? data[0].shippingEng
+                                    : data[0].shippingIt}
+                            </div>
+                        )}
                     </div>
                 </div>
             ) : (
-                <div>Not found</div>
+                <div>{itemNames[2][activeLanguege]}</div>
             )}
         </>
     );

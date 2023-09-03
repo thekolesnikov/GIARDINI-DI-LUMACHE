@@ -40,7 +40,8 @@ function ShopOnline() {
                             <ItemCard
                                 id={item.id}
                                 img={item.img}
-                                name={item.name}
+                                nameEng={item.nameEng}
+                                nameIt={item.nameIt}
                                 price={item.price}
                             />
                         </div>

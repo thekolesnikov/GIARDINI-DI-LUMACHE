@@ -3,13 +3,35 @@ import styles from './Footer.module.css';
 import { setLanguage } from '../../redux/slices/languageSlice';
 
 function Footer() {
-    const languages = ['ENG', 'IT', 'RU'];
+    const languages = ['ENG', 'IT'];
     const dispatch = useDispatch();
     const activeLanguege = useSelector((state) => state.language.language);
+
+    const footerNames = [
+        {
+            IT: 'Contatti',
+            ENG: 'Contact us',
+        },
+        {
+            IT: 'Indirizzo',
+            ENG: 'Post address',
+        },
+        {
+            IT: 'Ore lavorative',
+            ENG: 'Opening hours',
+        },
+        {
+            IT: 'Martedì – Sabato',
+            ENG: 'Tuesday – Saturday',
+        },
+    ];
+
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__left}>
-                <h2 className={styles.footer__title}>Contact us</h2>
+                <h2 className={styles.footer__title}>
+                    {footerNames[0][activeLanguege]}
+                </h2>
                 <div className={styles.footer__nav}>
                     <a className={styles.footer__text} href="">
                         instagram
@@ -42,7 +64,7 @@ function Footer() {
             <div className={styles.footer__right}>
                 <div className={styles.footer__contacts}>
                     <p className={styles.footer__contacts_title}>
-                        Post address
+                        {footerNames[1][activeLanguege]}
                     </p>
                     <p className={styles.footer__contacts_text}>
                         Via Dante Alighieri <br />
@@ -52,15 +74,17 @@ function Footer() {
                 </div>
                 <div className={styles.footer__contacts}>
                     <p className={styles.footer__contacts_title}>
-                        Opening hours
+                        {footerNames[2][activeLanguege]}
                     </p>
                     <p className={styles.footer__contacts_text}>
-                        Tuesday – Saturday <br />
+                        {footerNames[3][activeLanguege]} <br />
                         10:00 – 19:00
                     </p>
                 </div>
                 <div className={styles.footer__contacts}>
-                    <p className={styles.footer__contacts_title}>Contact us</p>
+                    <p className={styles.footer__contacts_title}>
+                        {footerNames[0][activeLanguege]}
+                    </p>
                     <a
                         className={styles.footer__contacts_link}
                         href="tel:+390733215797"
