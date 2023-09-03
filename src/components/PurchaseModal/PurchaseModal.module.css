@@ -108,15 +108,18 @@
     .form__buttons {
         flex-direction: column;
         gap: 16px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
 
     .form__button_send,
     .form__button_cancel {
-        width: 100%;
+        width: 91%;
     }
 
     .form__body {
-        height: calc(100vh - 250px);
+        height: calc(100vh - 0px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
