@@ -134,7 +134,7 @@
         display: none;
     }
     .header__burger_menu {
-        height: calc(100vh-50px);
+        height: calc(100vh);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -172,6 +172,8 @@
     .footer__nav {
         display: flex;
         justify-content: space-between;
+        position: fixed;
+        bottom: 0;
     }
 
     .footer__text {
