@@ -91,7 +91,7 @@
     } */
     .form__background {
         position: fixed;
-        z-index: 100;
+        z-index: 300;
         background: #fefced;
         top: 85px;
         left: 0;
@@ -102,7 +102,7 @@
         overflow: hidden;
     }
     .form {
-        z-index: 100;
+        z-index: 300;
         /* margin-top: 82px; */
         padding: 36px 16px 24px;
         width: 100%;
