@@ -48,6 +48,7 @@
 }
 
 .item__count_btn {
+    color: #282828;
     background-color: #fefced;
     cursor: pointer;
     font-size: 22px;
@@ -106,10 +107,17 @@
 }
 
 .item__details_btn {
+    /* width: 50px; */
+    padding-left: 30px;
     cursor: pointer;
     display: flex;
+    justify-content: end;
     align-items: center;
     background-color: #fefced;
+    transition: all 0.3s ease;
+}
+
+.item__details_btn img {
     transition: all 0.3s ease;
 }
 

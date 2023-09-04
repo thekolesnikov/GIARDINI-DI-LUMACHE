@@ -117,14 +117,18 @@ function ItemPage() {
                                 {itemNames[1][activeLanguege]}
                             </p>
                             <button
-                                className={`${styles.item__details_btn} ${
-                                    detailsVisible ? styles.active : ''
-                                }`}
+                                className={styles.item__details_btn}
                                 onClick={() =>
                                     setDetailsVisible(!detailsVisible)
                                 }
                             >
-                                <img src={arrow} alt="more details" />
+                                <img
+                                    className={
+                                        detailsVisible ? styles.active : ''
+                                    }
+                                    src={arrow}
+                                    alt="more details"
+                                />
                             </button>
                         </div>
                         {detailsVisible && (
