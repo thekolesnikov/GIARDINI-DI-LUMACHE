@@ -93,11 +93,12 @@
         position: fixed;
         z-index: 100;
         background-color: #fefced;
-        top: 110px;
+        top: 120px;
         left: 0;
         width: 100%;
-        height: calc(100% - 83px);
+        height: calc(100% - 120px);
         transition: all 0.2s ease;
+        overflow: hidden;
     }
     .form {
         z-index: 100;
