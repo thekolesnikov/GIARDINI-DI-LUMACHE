@@ -101,6 +101,7 @@
         transition: all 0.2s ease;
     }
     .form {
+        z-index: 100;
         /* margin-top: 82px; */
         padding: 36px 16px 24px;
         width: 100%;

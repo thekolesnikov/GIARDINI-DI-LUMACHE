@@ -255,6 +255,18 @@
     .cart {
         width: 70%;
     }
+    .cart__button_pay:hover a {
+        color: #ffffff;
+    }
+
+    .cart__button_pay:hover {
+        background: #333333;
+    }
+
+    .cart__button_continue:hover {
+        color: #000000;
+        background: #ffffff;
+    }
 }
 
 @media (max-width: 700px) {

@@ -175,6 +175,11 @@
         height: 300px;
         width: 300px;
     }
+
+    .item__button:hover {
+        background-color: #000000;
+        color: #fff;
+    }
 }
 
 @media (max-width: 680px) {

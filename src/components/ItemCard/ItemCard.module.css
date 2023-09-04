@@ -111,6 +111,11 @@
     .item {
         width: 210px;
     }
+
+    .item__button:hover {
+        color: #ffffff;
+        background-color: #000000;
+    }
 }
 
 @media (max-width: 700px) {
