@@ -92,15 +92,16 @@
     .form__background {
         position: fixed;
         z-index: 100;
-        background: none;
-        top: 83px;
+        background-color: #fefced;
+        top: 88px;
         left: 0;
         width: 100%;
         height: calc(100% - 83px);
         transition: all 0.2s ease;
     }
     .form {
-        margin-top: 82px;
+        /* margin-top: 82px; */
+        padding: 36px 16px 24px;
         width: 100%;
         /* height: calc(100%-50px); */
     }
@@ -108,8 +109,8 @@
     .form__buttons {
         flex-direction: column;
         gap: 16px;
-        position: fixed;
-        bottom: 200px;
+        /* position: fixed;
+        bottom: 200px; */
         width: 100%;
     }
 
@@ -119,7 +120,7 @@
     }
 
     .form__body {
-        height: calc(100vh - 50px);
+        height: calc(100vh - 205px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
