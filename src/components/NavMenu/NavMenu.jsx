@@ -50,7 +50,13 @@ function NavMenu({ badgeVisible }) {
         <>
             <header className={styles.header__fixed}>
                 <div className={styles.header}>
-                    <Link to="/">
+                    <Link
+                        to="/"
+                        onClick={() => {
+                            setIsFormVisible(false);
+                            setIsCompleteVisible(false);
+                        }}
+                    >
                         <img src={logo} alt="logo" />
                     </Link>
 
@@ -116,6 +122,8 @@ function NavMenu({ badgeVisible }) {
                                 to="/"
                                 onClick={() => {
                                     setIsBurgerOpen(false);
+                                    setIsFormVisible(false);
+                                    setIsCompleteVisible(false);
                                     document.body.classList.remove('hidden');
                                 }}
                             >
@@ -125,6 +133,8 @@ function NavMenu({ badgeVisible }) {
                                 to="/shop"
                                 onClick={() => {
                                     setIsBurgerOpen(false);
+                                    setIsFormVisible(false);
+                                    setIsCompleteVisible(false);
                                     document.body.classList.remove('hidden');
                                 }}
                             >
@@ -134,6 +144,8 @@ function NavMenu({ badgeVisible }) {
                                 to="/about"
                                 onClick={() => {
                                     setIsBurgerOpen(false);
+                                    setIsFormVisible(false);
+                                    setIsCompleteVisible(false);
                                     document.body.classList.remove('hidden');
                                 }}
                             >
@@ -144,6 +156,8 @@ function NavMenu({ badgeVisible }) {
                                 onClick={() => {
                                     setIsBurgerOpen(false);
                                     setCartActive(true);
+                                    setIsFormVisible(false);
+                                    setIsCompleteVisible(false);
                                     document.body.classList.add('hidden');
                                 }}
                             >
@@ -160,6 +174,8 @@ function NavMenu({ badgeVisible }) {
                                 to="/contacts"
                                 onClick={() => {
                                     setIsBurgerOpen(false);
+                                    setIsFormVisible(false);
+                                    setIsCompleteVisible(false);
                                     document.body.classList.remove('hidden');
                                 }}
                             >
@@ -168,7 +184,15 @@ function NavMenu({ badgeVisible }) {
                         </nav>
                         <div className={styles.footer__nav}>
                             <div className={styles.footer__nav_flex}>
-                                <a className={styles.footer__text} href="">
+                                <a
+                                    className={styles.footer__text}
+                                    href=""
+                                    target="_blank"
+                                    onClick={() => {
+                                        setIsFormVisible(false);
+                                        setIsCompleteVisible(false);
+                                    }}
+                                >
                                     instagram
                                 </a>
                                 <div className={styles.footer__langueges}>

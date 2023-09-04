@@ -136,10 +136,13 @@
     .header__burger_menu {
         height: calc(100vh);
         display: flex;
+        top: 2px;
         flex-direction: column;
         justify-content: space-between;
+        position: relative;
         /* padding-bottom: 83px; */
-        z-index: 100;
+        z-index: 1000;
+        background-color: #fefced;
     }
     .header__nav_mobile {
         display: flex;
