@@ -111,7 +111,7 @@
         flex-direction: column;
         gap: 16px;
         position: fixed;
-        bottom: 100px;
+        bottom: 120px;
         width: 100%;
     }
 
@@ -125,5 +125,17 @@
         display: flex;
         flex-direction: column;
         justify-content: start;
+    }
+
+    .form__button_cancel:hover {
+        border: 1px solid #001c08;
+        background: #fff;
+        color: #001c08;
+    }
+
+    .form__button_send:hover {
+        border: none;
+        background: #333;
+        color: #fff;
     }
 }
