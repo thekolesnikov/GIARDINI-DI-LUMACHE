@@ -43,6 +43,7 @@ function PurchaseModal({ setIsFormVisible, setIsCompleteVisible }) {
         e.preventDefault();
         setIsFormVisible(false);
         setIsCompleteVisible(true);
+        document.body.classList.remove('hidden');
 
         const userData = {
             name: nameValue,

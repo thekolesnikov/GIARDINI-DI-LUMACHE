@@ -217,6 +217,7 @@ function CartPage({ setCartActive, setIsFormVisible }) {
                                 onClick={() => {
                                     setCartActive(false);
                                     setIsFormVisible(true);
+                                    document.body.classList.add('hidden');
                                 }}
                                 className={styles.cart__button_pay}
                             >
