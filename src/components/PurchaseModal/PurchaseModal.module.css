@@ -93,8 +93,7 @@
         position: fixed;
         z-index: 100;
         background-color: #fefced;
-        /* top: 88px; */
-        top: 130px;
+        top: 86px;
         left: 0;
         width: 100%;
         height: calc(100% - 83px);
