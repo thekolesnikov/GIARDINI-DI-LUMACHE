@@ -77,6 +77,13 @@
     .complete__body {
     }
 
+    .complete__button:hover {
+        border: none;
+        background: #333;
+        color: #fff;
+        padding: 15px 10px;
+    }
+
     .complete__logo {
         margin-bottom: 42px;
     }
