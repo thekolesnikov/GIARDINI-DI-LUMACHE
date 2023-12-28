@@ -86,6 +86,34 @@ function NavMenu({ badgeVisible }) {
                             {navNames[4][activeLanguege]}
                         </NavLink>
                         {badgeVisible && <Badge />}
+                        <div className={styles.footer__langueges}>
+                            {languages.map((item) => {
+                                return (
+                                    <div key={item}>
+                                        <button
+                                            onClick={() =>
+                                                dispatch(
+                                                    setLanguage(
+                                                        item.toUpperCase()
+                                                    )
+                                                )
+                                            }
+                                            className={
+                                                activeLanguege ===
+                                                item.toUpperCase()
+                                                    ? styles.footer__text_underline
+                                                    : styles.footer__text
+                                            }
+                                        >
+                                            {item}
+                                        </button>
+                                        <span className={styles.footer__span}>
+                                            {' / '}
+                                        </span>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </nav>
 
                     <div className={styles.header__burger}>
@@ -202,7 +230,9 @@ function NavMenu({ badgeVisible }) {
                                                 <button
                                                     onClick={() => {
                                                         dispatch(
-                                                            setLanguage(item)
+                                                            setLanguage(
+                                                                item.toUpperCase()
+                                                            )
                                                         );
                                                         setIsBurgerOpen(false);
                                                         document.body.classList.remove(
@@ -210,7 +240,8 @@ function NavMenu({ badgeVisible }) {
                                                         );
                                                     }}
                                                     className={
-                                                        activeLanguege === item
+                                                        activeLanguege ===
+                                                        item.toUpperCase()
                                                             ? styles.footer__text_underline
                                                             : styles.footer__text
                                                     }

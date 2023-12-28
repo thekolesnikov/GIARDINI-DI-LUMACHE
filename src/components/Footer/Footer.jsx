@@ -1,10 +1,7 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styles from './Footer.module.css';
-import { setLanguage } from '../../redux/slices/languageSlice';
 
 function Footer() {
-    const languages = ['ENG', 'IT'];
-    const dispatch = useDispatch();
     const activeLanguege = useSelector((state) => state.language.language);
 
     const footerNames = [
@@ -36,29 +33,6 @@ function Footer() {
                     <a className={styles.footer__text} href="">
                         instagram
                     </a>
-                    <div className={styles.footer__langueges}>
-                        {languages.map((item) => {
-                            return (
-                                <div key={item}>
-                                    <button
-                                        onClick={() =>
-                                            dispatch(setLanguage(item))
-                                        }
-                                        className={
-                                            activeLanguege === item
-                                                ? styles.footer__text_underline
-                                                : styles.footer__text
-                                        }
-                                    >
-                                        {item}
-                                    </button>
-                                    <span className={styles.footer__span}>
-                                        {' / '}
-                                    </span>
-                                </div>
-                            );
-                        })}
-                    </div>
                 </div>
             </div>
             <div className={styles.footer__right}>
@@ -103,27 +77,6 @@ function Footer() {
                 <a className={styles.footer__text} href="">
                     instagram
                 </a>
-                <div className={styles.footer__langueges}>
-                    {languages.map((item) => {
-                        return (
-                            <div key={item}>
-                                <button
-                                    onClick={() => dispatch(setLanguage(item))}
-                                    className={
-                                        activeLanguege === item
-                                            ? styles.footer__text_underline
-                                            : styles.footer__text
-                                    }
-                                >
-                                    {item}
-                                </button>
-                                <span className={styles.footer__span}>
-                                    {' / '}
-                                </span>
-                            </div>
-                        );
-                    })}
-                </div>
             </div>
         </footer>
     );

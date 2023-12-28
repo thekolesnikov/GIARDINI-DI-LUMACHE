@@ -76,14 +76,6 @@
     display: none;
 }
 
-.footer__langueges {
-    display: flex;
-}
-
-.footer__langueges div:last-child span {
-    display: none !important;
-}
-
 @media (max-width: 1350px) {
     .footer__left {
         width: 300px;

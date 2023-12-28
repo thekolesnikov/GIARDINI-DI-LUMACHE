@@ -11,6 +11,8 @@ function PurchaseModal({ setIsFormVisible, setIsCompleteVisible }) {
     const [nameValue, setNameValue] = useState('');
     const [phoneValue, setPhoneValue] = useState('');
     const [emailValue, setEmailValue] = useState('');
+    const [messageValue, setMessageValue] = useState('');
+    const [isEmailInvalid, setIsEmailInvalid] = useState(false);
 
     const purchaseNames = [
         {
@@ -26,9 +28,10 @@ function PurchaseModal({ setIsFormVisible, setIsCompleteVisible }) {
             ENG: 'Phone*',
         },
         {
-            IT: 'Email*',
-            ENG: 'Email*',
+            IT: 'Email',
+            ENG: 'Email',
         },
+
         {
             IT: 'Invia',
             ENG: 'Send',
@@ -37,24 +40,67 @@ function PurchaseModal({ setIsFormVisible, setIsCompleteVisible }) {
             IT: 'Annulla',
             ENG: 'Cancel',
         },
+        {
+            IT: 'Messaggio',
+            ENG: 'Message',
+        },
     ];
+
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
 
     async function formSubmit(e) {
         e.preventDefault();
-        setIsFormVisible(false);
-        setIsCompleteVisible(true);
 
-        const userData = {
-            name: nameValue,
-            phone: phoneValue,
-            emailValue: emailValue,
-        };
-        dispatch(resetCart());
+        if (!emailValue || validateEmail(emailValue)) {
+            setIsFormVisible(false);
+            setIsCompleteVisible(true);
+            setIsEmailInvalid(false);
 
-        return await fetch('send_mail.php', {
-            method: 'POST',
-            body: userData,
-        });
+            // const userData = {
+            //     name: nameValue,
+            //     phone: phoneValue,
+            //     emailValue: emailValue,
+            //     messageValue: messageValue,
+            // };
+            const emailBody = `
+            <b>Name</b>:${nameValue}
+            <br>
+            <b>Phone</b>:${phoneValue}
+            <br>
+            ${emailValue ? `<b>Email</b>:${emailValue}<br>` : ''}
+            ${messageValue ? `<b>Email</b>:${messageValue}` : ''}
+            <br>
+            <br>
+            ${items.map((item, index) => {
+                return `
+                <b>${index + 1}.</b>Item name:${item.nameEng}
+                <br>
+                Item id:${item.id}
+                <br>
+                Item count:${item.count}
+                <br>
+                <br>
+                `;
+            })}
+            `;
+
+            window.Email.send({
+                SecureToken: 'caf4a320-db15-4a59-b208-cb93c8ac8f2d',
+                To: 'thesharkov@gmail.com',
+                From: 'thesharkov@gmail.com',
+                Subject: 'New Order',
+                Body: emailBody,
+            }).then(() => dispatch(resetCart()));
+            console.log(items);
+        } else {
+            setIsEmailInvalid(true);
+        }
     }
 
     return (
@@ -86,11 +132,31 @@ function PurchaseModal({ setIsFormVisible, setIsCompleteVisible }) {
                         />
                         <input
                             type="text"
-                            className={styles.form__input}
+                            className={
+                                isEmailInvalid
+                                    ? styles.form__input_invalid
+                                    : styles.form__input
+                            }
                             placeholder={purchaseNames[3][activeLanguege]}
-                            required
                             value={emailValue}
-                            onChange={(e) => setEmailValue(e.target.value)}
+                            onChange={(e) => {
+                                setEmailValue(e.target.value);
+                                setIsEmailInvalid(false);
+                            }}
+                        />
+                        {isEmailInvalid && (
+                            <p className={styles.form__input_error}>
+                                {activeLanguege === 'ENG'
+                                    ? 'Invalid email. Please try again!'
+                                    : 'E-mail non valido. Per favore riprova!'}
+                            </p>
+                        )}
+                        <textarea
+                            type="text"
+                            className={styles.form__textarea}
+                            placeholder={purchaseNames[6][activeLanguege]}
+                            value={messageValue}
+                            onChange={(e) => setMessageValue(e.target.value)}
                         />
                     </div>
                     <div className={styles.form__buttons}>

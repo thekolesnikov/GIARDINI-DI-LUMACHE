@@ -22,8 +22,8 @@
 .header__nav {
     display: flex;
     align-items: center;
-    gap: 78.5px;
-    margin-right: 127px;
+    gap: 40px;
+    /* margin-right: 127px; */
     position: relative;
 }
 
@@ -39,15 +39,18 @@
 }
 
 .header__nav_btn {
-    position: relative;
+    /* position: relative; */
     cursor: pointer;
     background-color: #fefced;
     font-size: 20px;
     font-family: 'Noto Serif', serif;
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
 
 .header__nav_btn_badge {
-    position: absolute;
+    /* position: absolute; */
     top: 2px;
     right: -32px;
     display: flex;
@@ -61,6 +64,7 @@
     font-weight: 600;
     line-height: 100%;
     color: #ffffff;
+    /* margin-right: 24px; */
 }
 
 .header__burger {
@@ -74,6 +78,39 @@
 
 .header__burger_menu {
     display: none;
+}
+
+.footer__langueges {
+    display: flex;
+}
+
+.footer__langueges div:last-child span {
+    display: none !important;
+}
+
+.footer__text {
+    color: #282828;
+    background-color: #fefced;
+    font-size: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.footer__text_underline {
+    color: #282828;
+    background-color: #fefced;
+    font-size: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footer__span {
+    background-color: #fefced;
+    font-size: 20px;
+    /* text-transform: uppercase; */
+    cursor: pointer;
+    margin-right: 5px;
 }
 
 @media (max-width: 1550px) {
@@ -92,8 +129,8 @@
 @media (max-width: 1250px) {
     .header__nav {
         margin-right: 0px;
-        max-width: 600px;
-        gap: 74.5px;
+        max-width: 700px;
+        /* gap: 74.5px; */
     }
 
     .header__fixed {
@@ -103,7 +140,7 @@
 
 @media (max-width: 1100px) {
     .header__nav {
-        max-width: 430px;
+        margin-right: 45px;
         gap: 32px;
     }
     .header__nav_btn_badge {
@@ -111,17 +148,18 @@
     }
 
     .header__fixed {
-        width: 91%;
-    }
-}
-
-@media (max-width: 1100px) {
-    .header__fixed {
         width: 95%;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
+    .header__nav {
+        margin-right: 0px;
+        gap: 23px;
+    }
+}
+
+@media (max-width: 870px) {
     .header__nav {
         gap: 40px;
     }
